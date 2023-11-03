@@ -20,6 +20,7 @@ namespace TRADING.Modeles
         private int _tel;
 
         private List<Transaction> _lesTransactions;
+        private List<Action2> _listeInteret;
 
 
         #endregion
@@ -35,6 +36,7 @@ namespace TRADING.Modeles
             _email = email;
             _tel = tel;
             _lesTransactions = new List<Transaction>();
+            _listeInteret = new List<Action2>();
 
             Trader.CollClasse.Add(this);
 
@@ -51,12 +53,39 @@ namespace TRADING.Modeles
         public string Email { get => _email; set => _email = value; }
         public int Tel { get => _tel; set => _tel = value; }
         public List<Transaction> LesTransactions { get => _lesTransactions; set => _lesTransactions = value; }
+        public List<Action2> ListeInteret { get => _listeInteret; set => _listeInteret = value; }
 
         #endregion
 
         #region Methodes
 
-        // Méthodes supplémentaires ici si nécessaire
+        public void AjouterActionInteret(Action2 monAction)
+        { 
+        if (!this._listeInteret.Contains(monAction))
+            {
+                this._listeInteret.Add(monAction);
+            }
+        }
+        public void RetirerActionInteret(Action2 monAction)
+        {
+            if (this._listeInteret.Contains(monAction))
+            {
+                this._listeInteret.Remove(monAction);
+            }
+        }
+        
+        public bool EstActionInteret(Action2 monAction)
+        {
+            if (this._listeInteret.Contains(monAction))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
 
         #endregion
     }

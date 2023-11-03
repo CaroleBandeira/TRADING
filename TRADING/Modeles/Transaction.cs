@@ -34,6 +34,8 @@ namespace TRADING.Modeles
             _type = type;
             _trader = trader;
             _action = action;
+
+            Transaction.CollClasse.Add(this);
         }
 
 

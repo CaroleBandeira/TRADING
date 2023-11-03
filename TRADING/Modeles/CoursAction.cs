@@ -23,6 +23,8 @@ namespace TRADING.Modeles
             _dateCours = dateCours;
             _prixCours = prixCours;
             _action = action;
+
+            CoursAction.CollClasse.Add(this);
         }
 
 
@@ -35,7 +37,7 @@ namespace TRADING.Modeles
         public int IdCours { get => _idCours; set => _idCours = value; }
         public DateTime DateCours { get => _dateCours; set => _dateCours = value; }
         public double PrixCours { get => _prixCours; set => _prixCours = value; }
-        public Action2 Action { get => _action; set => _action = value; }
+        public Action2 Action2 { get => _action; set => _action = value; }
 
         #endregion
 

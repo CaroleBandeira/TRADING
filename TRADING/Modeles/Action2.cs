@@ -15,6 +15,7 @@ namespace TRADING.Modeles
 
         private List<CoursAction> _lHistoriqueCours;
         private List<Transaction> _lesTransactions;
+        private List<Trader> _lesTradersInteresses;
 
         #endregion
 
@@ -26,6 +27,7 @@ namespace TRADING.Modeles
             _prix = prix;
             _lesTransactions = new List<Transaction>();
             _lHistoriqueCours = new List<CoursAction>();
+            _lesTradersInteresses = new List<Trader>();
 
             Action2.CollClasse.Add(this);
         }
@@ -41,11 +43,20 @@ namespace TRADING.Modeles
         public double Prix { get => _prix; set => _prix = value; }
         public List<CoursAction> LHistoriqueCours { get => _lHistoriqueCours; set => _lHistoriqueCours = value; }
         public List<Transaction> LesTransactions { get => _lesTransactions; set => _lesTransactions = value; }
+        public List<Trader> LesTradersInteresses { get => _lesTradersInteresses; set => _lesTradersInteresses = value; }
         #endregion
 
         #region Methodes
 
-        // Méthodes supplémentaires ici si nécessaire
+        public List<Trader> _lesTradersInteresses
+        
+        {
+            if (Trader._listeInteret.Contains(Action2 monAction))
+            {
+            _lesTradersInteresses.Add(Trader) 
+            
+        }
+        
 
         #endregion
     }
